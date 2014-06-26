@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+      <meta name="description" content="homepage">
+      <meta name="author" content="Kevin Chen">
+      <title> BundleUp </title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="css/index.css">
+
+      <!-- JS/JQuery-->
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.js"></script>
+      <script type="text/javascript" src="js/bundleup.js"></script>
+  </head>
+
+  <body onload="currentLocation();setPref()">
+    
+
+
+    <div class="header">
+      <a onclick="storePrefs();" href="menu.html" style="font-size: medium">MENU</a>
+      <span>BundleUp</span>
+    </div>
+    <div class="break"></div>
+    <div class="details">
+      <div class="maintemp">
+      <span id="temp"></span>&deg; F </div>
+      <!--
+      <div class="otherdetails"><span id="desc"></span></div>
+    -->
+      <div class="otherdetails"><img id="weathericon" src=""></div>
+    </div>
+    <div class="break"></div>
+
+
+    <div class="moredetails">
+       <h4 id="loc"></h4><span><button vertical-align:middle; onclick="changeLocation()">Change Location</button></span>
+      <h4 id="loc"></h4>
+
+  <div class="descriptor" id="desc">
+  </div>
+
+  <div class="panel panel-default" style="background:black; border-color: orange; border-top-left-radius: 0; border-top-right-radius: 0; margin-bottom: 0">
+    <div class="panel-heading" style="background:#333333; border-color: orange">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" style="dtitle" id="weatherdetails" onclick="toggleDetails();">
+          More Weather Details
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse"> <!--add "in" after "collapse" can show the content-->
+      <div class="panel-body">
+
+      <div class="extras"> 
+        Precipitation: &nbsp;<span id="precip">% </span></div>
+      <div class="extras"> 
+        High Temperature: &nbsp;<span id="high">&deg; F </span></div>
+      <div class="extras">
+        Low Temperature: &nbsp;<span id="low">&deg; F </span></div>
+      <div class="extras">
+        Feels Like: &nbsp;<span id="feels_t">&deg; F </span></div>
+      <div class="extras">
+        Wind Speed: &nbsp;<span id="wind">mph </span></div>
+      <div class="extras">
+        Humidity: &nbsp;<span id="humid">% </span></div>
+      <div class="extras" style="margin-bottom: 20px;">
+        UV Index (0-11): &nbsp;<span id="uvi"> </span></div>
+
+      </div>
+    </div>
+  </div>
+
+    </div>
+
+    <div class="alert" id="alert"><span id="alert_cond">alert: </span></div>
+
+    <div class="break"></div>
+    <div class="breakw">Suggestions</div>
+
+<!--    <div class="timeDropdown">
+      <span class="dropdown">
+        <!--<a href="index.html" class="dropdown-toggle" data-toggle="dropdown">Change Time<b class="caret"></b></a>
+        <ul class="dropdown-menu" id="time-changer">
+          <li><a href="index.html">The whole day</a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">Nav header</li>-->
+     <!--     <li><a href="testindex.html">Morning</a></li>
+          <li><a href="testindex.html">Noon</a></li>
+          <li><a href="testindex.html">Night</a></li>
+          <li class="divider"></li>
+          <li><a href="testindex.html">Vacation Option</a></li>
+          </ul>
+      </span>
+    </div>-->
+
+    <div class="break"></div>
+
+    <div class="menu-option2">
+      <div class="menu-prefs" style="margin-top: -10px;">
+        <span>i prefer to wear...</span><br>
+          <button class="left2" id="left" onclick="setCold(); storePrefs(); changesuggestions(); return false">less clothes</button>
+          <button class="center2" id="center" onclick="setDef(); storePrefs(); changesuggestions(); return false">default</button>
+          <button class="right2" id="right" onclick="setWarm(); storePrefs(); changesuggestions(); return false">more clothes</button>
+      </div>
+    </div>
+
+    <div class="sug">
+      <br><br>
+      <!-- Reminder -->
+      <div class="suggestion" id="sunny" style="display: none">
+        <ul>
+          <li><img class="sugg-img pull-left"src="images/accessories/sunglasses.png"/>
+            <p> Better to wear a pair of sunglasses. </p></li>
+        </ul>
+      </div>
+      <div class="suggestion" id="rain" style="display: none">
+        <ul>
+          <li><img class="sugg-img pull-left"src="images/accessories/umbrella.png"/>
+            <p> Remember to take your umbrella! </p></li>
+            <!--
+          <li><img class="sugg-img pull-left"src="images/accessories/rainboots.png"/>
+            <p> Rain Boots </p></li>
+          -->
+        </ul>
+      </div>
+
+      <!--Cold Options-->
+      <div class="suggestion" id="cold" style="display: none">
+        <ul>
+          <li><img src="images/top/heavy_coat.png"/>
+            <p> Dress warm! It's cold outside. </p></li>
+            <!--
+          <li><img src="images/bottom/pants.png"/>
+            <p> Heavy Pants </p></li>
+          <li><img src="images/accessories/boot.png"/> 
+            <p> Warm Boots </p></li>
+          -->
+          <li><img src="images/accessories/scarf.png"/> 
+            <p> Scarf </p></li>
+        </ul>
+      </div>
+      <!--Mild options-->
+      <div class="suggestion" id="mild" style="display: none">
+        <ul>
+          <li><img class="sugg-img pull-left"src="images/top/hoodie.png"/>
+            <p> Long Sleeves </p></li>
+            <!--
+          <li><img class="sugg-img pull-left"src="images/bottom/pants.png"/>
+            <p> Light Pants </p></li>
+          <li><img class="sugg-img pull-left"src="images/accessories/sneakers.png"/>
+            <p> Light Shoes </p></li>
+          -->
+        </ul>
+      </div>
+      <!--Warm options-->
+      <div class="suggestion" id="warm" style="display: none">
+        <ul>
+          <li><img class="sugg-img pull-left"src="images/top/short_sleeve.png"/>
+            <p> Stay cool! It's going to be a warm day. </p><br></li>
+            <!--
+          <li><img class="sugg-img pull-left"src="images/bottom/short.png"/>
+            <p> Shorts/Skirt </p></li>
+          <li><img class="sugg-img pull-left"src="images/accessories/sandal.png"/>
+            <p> Sandals </p></li>
+          -->
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

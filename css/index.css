@@ -1,0 +1,429 @@
+
+body {
+	font-family: Helvetica;
+	min-width: 320px;
+	margin: 0;
+	padding: 0;
+}
+
+a:link, a:visited{
+    text-decoration: none;
+}
+
+
+/*====BundleUp Header====*/
+.header {
+	background: #333333;
+	width: 100%;
+	padding: 10px;
+	position: relative;
+}
+
+.header span {
+	font-weight: bold;
+	font-size: large;
+	margin-left: 15%;
+	color: #969696;
+}
+
+.break {
+	background: orange;
+	height: 1px;
+	width: 100%;
+	position: relative;
+}
+
+.breakw {
+	background: black;
+	width: 100%;
+	/*text-align: right;*/
+	text-align: center;
+	padding: 10px;
+	/*border-right: thin solid #B8B8B8;*/
+	font-size: large;
+	color: #666666;
+	border-bottom: thin solid orange;
+}
+
+
+/*====Weather Details====*/
+.details {
+	background: black;
+	opacity: 1;
+	width: 100%;
+}
+
+.details .maintemp {
+	width: 50%;
+	font-size: xx-large;
+	color: white;
+	padding: 20px;
+	border-right: thin solid #B8B8B8;
+	text-align: right;
+	vertical-align: middle;
+}
+
+.details .otherdetails {
+	text-align: left;
+	color: #666666;
+	width: 50%;
+	padding: 20px;
+	margin-top: -85px;
+	float: right;
+	overflow: hidden;
+}
+
+.moredetails {
+	width: 100%;
+	background: #333333;
+	padding: 10px;
+}
+
+.moredetails h4 {
+	text-align: center;
+	color: orange;
+}
+
+.moredetails .dtitle  {
+	width: 55%;
+	text-align: left;
+	color: white;
+	padding: 5px;
+	border-bottom: thin solid orange;
+}
+
+.moredetails .extras {
+	width: 100%;
+	text-align: left;
+	color: #B8B8B8;
+	padding: 5px;
+	font-size: medium;
+	font-weight: lighter;
+	border-bottom: thin solid orange;
+}
+
+.moredetails .extras span {
+	color: white;
+	float: right;
+}
+
+.moredetails img {
+	float: right;
+	margin-right: 10%;
+	margin-top: 100px;
+	width: 25%;
+	max-width: 200px;
+	margin-top: -100px;
+}
+
+.moredetails a h4 span {
+	font-size: small;
+	color: #428bca;	
+}
+
+.descriptor {
+	width: 100%;
+	/*border: thin solid orange;*/
+	color: white;
+	text-align: left;
+	font-size: large;
+	margin-top: 1px;
+}
+
+.alert {
+	width: 100%;
+	background: #A60000;
+	color: white;
+	font-size: x-large;
+	text-align: center;
+	margin: 0;
+	padding: 0px;
+	border-radius: 0;
+	font-style: italic;
+	display: none;
+	font-variant: small-caps;
+}
+
+/*====Suggestions====*/
+.sug {
+	background: #333333;
+	float: left;
+	width: 100%;
+	padding-bottom: 100px;
+}
+
+.suggestion {
+	clear: both;
+	background: #333333;
+}
+
+.suggestion p {
+	margin-top: 30px;
+	font-size: large;
+	background: #333333;
+	color: white;
+}
+
+.suggestion img {
+	width: 40%;
+	float: left;
+	margin-bottom: 20px;
+	background: #333333;
+}
+
+.suggestion li {
+	float: left;
+	list-style: none;
+	width: 100%;
+	background: #333333;
+	margin-left: -10%;
+}
+
+form span {
+	color: grey;
+	font-style: italic;
+	font-size: medium;
+}
+
+#prefs {
+	font-size: medium;
+	font-variant: small-caps;
+}
+
+/*===temperature preference buttons====*/
+button {
+	width: 30%;
+	background: -webkit-linear-gradient(#858585, #333333); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#858585, #333333); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#858585, #333333); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#B0B0B0, #575757); /* Standard syntax */
+	border: none;
+	padding: 5px;
+	margin-top: 5px;
+	font-weight: lighter;
+}
+
+button#left, {
+	width: 30%;
+	border-right: thin solid black;
+}
+
+button#center {
+	margin: 5px;	
+}
+
+button#right {	
+	width: 30%;
+	border-right: thin solid black;
+}
+
+button#left.selected {
+	background: rgba(179,220,237,1);
+	background: -moz-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(179,220,237,1)), color-stop(50%, rgba(41,184,229,1)), color-stop(100%, rgba(188,224,238,1)));
+	background: -webkit-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+	background: -o-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+	background: -ms-linear-gradient(left, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+	background: linear-gradient(to right, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(188,224,238,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee', GradientType=1 );
+}
+
+button#right.selected {
+	background: rgba(255,175,75,1);
+	background: -moz-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(255,146,10,1)));
+	background: -webkit-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	background: -o-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	background: -ms-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	background: linear-gradient(to right, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ff920a', GradientType=1 );
+}
+
+button#center.selected {
+	background: rgba(210,255,82,1);
+	background: -moz-linear-gradient(left, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(210,255,82,1)), color-stop(100%, rgba(145,232,66,1)));
+	background: -webkit-linear-gradient(left, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+	background: -o-linear-gradient(left, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+	background: -ms-linear-gradient(left, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+	background: linear-gradient(to right, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842', GradientType=1 );	
+}
+
+button.selected {
+	width: 30%;
+	font-weight: normal;
+	background: -webkit-linear-gradient(#7756FC, #562BFF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#7756FC, #562BFF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#7756FC, #562BFF); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#FF8533, #FF6600); /* Standard syntax */
+	-moz-box-shadow:    inset 0 0 8px #000000;
+   	-webkit-box-shadow: inset 0 0 8px #000000;
+   	box-shadow:         inset 0 0 8px #000000;
+	color: black;
+	
+}
+
+input[type=button] {
+	font-size: 15px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.error {
+	color: red;
+	display: none;
+	font-style: italic;
+	font-size: large;
+	margin-top: 20px;
+	margin-bottom: -10px;
+}
+
+/*====Menu page====*/
+.menu-content {
+	background: #333333;
+	width: 100%;
+	min-height: 750px;
+	height: auto !important;
+	overflow: hidden;
+}
+
+.menu-option {
+	width: 100%;
+	border-bottom: thin solid orange;
+	padding: 20px;
+	color: white;
+	font-size: large;
+	font-variant:small-caps;
+}
+
+/*Needed to prevent white background on click*/
+.menu-option2 {
+	width: 100%;
+	border-bottom: thin solid orange;
+	padding: 20px;
+	color: white;
+	font-size: large;
+	font-variant:small-caps;
+	background: #333333;
+}
+
+.menu-option .arrow {
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg); /* IE 9 */
+	-webkit-transform:rotate(45deg); /* Opera, Chrome, and Safari */
+	float: right;
+	margin-right: 5%;
+	font-weight: 900;
+}
+
+.menu-option:active {
+	background: white;
+	color: #333333;
+}
+
+.menu-prefs {
+	font-size: large;
+	text-align: center;
+}
+
+.menu-prefs span {
+	color: white;
+	font-size: large;
+	text-align: left;
+}
+
+button.center2 {
+	margin-top: 0;
+	border-radius: 5px;
+}
+
+button.left2 {
+	margin-top: 0;
+	border-radius: 5px;
+}
+
+button.right2 {
+	margin-top: 0;
+	border-radius: 5px;
+}
+
+
+
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+/*    margin-bottom: 30px; */
+  }
+}
+
+.btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+
+.popuplogincontent {
+	display: none;
+	position: absolute;
+	top: 15%;
+	left: 10%;
+	width: 70%;
+	height: auto;
+	padding: 25px;
+	box-shadow: inset 0 0 4px 4px #999;
+	background-color: white;
+	z-index: 1002;
+	overflow: auto;
+	border-radius: 15px;
+	margin-left: 8%;
+}
+
+.overlay {
+	display: none;
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index: 1001;
+	opacity: .8;
+}
+
+#lightlogin input {
+	margin-top: 30px;	
+}
+
+#loc {
+	margin: 0 auto;	
+}
+#loc_error {
+	color: red;
+}
+
+#changer button {
+	width: 118px;
+	height: 25px;	
+	padding: 0;
+	font-size: 15px;
+	color: white;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 4px;
+}
+
+#changer {
+	width: 118px; 
+	
+	margin: 0 auto;	
+}

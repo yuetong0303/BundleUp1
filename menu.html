@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta name="mobile-web-app-capable" content="yes">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+      <meta name="description" content="homepage">
+      <meta name="author" content="Kevin Chen">
+      <title> BundleUp </title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="css/index.css">
+
+
+      <!-- JS/JQuery-->
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.js"></script>
+      <script src="./js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/bundleup.js"></script>
+      <script src="./js/docs.min.js"></script>
+  </head>
+
+  <body onload="setPref()">
+    <div class="header">
+      <span>BundleUp</span>
+    </div>
+    <div class="break"></div>
+    <div class="menu-content">
+      <a onclick="storePrefs(); localStorage.setItem('city', null); localStorage.setItem('state', null)" href="index.html"><div class="menu-option">Current local weather
+        <div class="arrow">&#8599;</div>
+      </div></a>
+      <a onclick="return storePrefs();" href="location.html" ><div class="menu-option">Choose a location
+        <div class="arrow">&#8599;</div>
+      </div></a>
+
+      <div class="menu-option2">
+        <div class="menu-prefs">
+          <span>i prefer to wear...</span><br>
+            <button class="left2" id="left" onclick="setCold();return false">less clothes</button>
+            <button class="center2" id="center" onclick="setDef();return false">default</button>
+            <button class="right2" id="right" onclick="setWarm();return false">more clothes</button>
+        </div>
+      </div>
+
+      <a href="" style="display: none"><div class="menu-option">Plan a vacation
+        <div class="arrow">&#8599;</div>
+      </div></a>
+      <a href="" style="display: none"><div class="menu-option">About BundleUp
+        <div class="arrow">&#8599;</div>
+      </div></a>
+    </div>
+  </body>
+</html>
